@@ -20,9 +20,7 @@ const orders = [
     {
         id: "a68b823c-7ca6-44bc-b721-fb4d5312cafc",
         username: "Windy Arya",
-        idItem: 1,
-        itemName: "Paket Belajar Aktiva",
-        amount: 1,
+        paketBelajarName: "Paket Belajar Aktiva",
         total: 500000,
         paymentMethod: "ShopeePay",
         createdAt: d.toISOString(),
@@ -31,9 +29,7 @@ const orders = [
     {
         id: "34415c7c-f82d-4e44-88ca-ae2a1aaa92b7",
         username: "Arya",
-        idItem: 2,
-        itemName: "Paket Belajar Ultima",
-        amount: 1,
+        paketBelajarName: "Paket Belajar Ultima",
         total: 1500000,
         paymentMethod: "ShopeePay",
         createdAt: d.toISOString(),
@@ -74,9 +70,7 @@ server.addService(ordersProto.OrderService.service, {
         let existingOrder = orders.find(n => n.id == call.request.id);
 
         if (existingOrder) {
-            existingOrder.idItem = call.request.idItem;
-            existingOrder.itemName = call.request.itemName;
-            existingOrder.amount = call.request.amount;
+            existingOrder.paketBelajarName = call.request.paketBelajarName;
             existingOrder.total = call.request.total;
             existingOrder.paymentMethod = call.request.paymentMethod;
             callback(null, existingOrder);

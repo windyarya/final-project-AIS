@@ -33,9 +33,7 @@ app.get("/", (req, res) => {
 app.post("/create", (req, res) => {
     let newOrder = {
         username: req.body.username,
-        idItem: req.body.idItem,
-        itemName: req.body.itemName,
-        amount: req.body.amount,
+        paketBelajarName: req.body.paketBelajarName,
         total: req.body.total,
         paymentMethod: req.body.paymentMethod,
     };
@@ -53,9 +51,7 @@ app.post("/create", (req, res) => {
 app.put("/update", (req, res) => {
     const updateOrder = {
         id: req.body.id,
-        idItem: req.body.idItem,
-	    itemName: req.body.itemName,
-	    amount: req.body.amount,
+	    paketBelajarName: req.body.paketBelajarName,
 	    total: req.body.total,
 	    paymentMethod: req.body.paymentMethod
     };

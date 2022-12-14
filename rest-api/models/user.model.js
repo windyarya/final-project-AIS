@@ -3,10 +3,16 @@ module.exports = (sequelize, Sequelize) => {
         name: {
             type: Sequelize.STRING
         },
-        age: {
-            type: Sequelize.INTEGER
+        email: {
+            type: Sequelize.STRING
         },
-        address: {
+        phone: {
+            type: Sequelize.STRING
+        },
+        class: {
+            type: Sequelize.STRING
+        },
+        password: {
             type: Sequelize.STRING
         }
     });

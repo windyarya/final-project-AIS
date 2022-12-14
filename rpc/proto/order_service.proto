@@ -12,20 +12,16 @@ service OrderService {
 
 message CreateOrderRequest {
     string username = 1;
-	string idItem = 2;
-	string itemName = 3;
-	int64 amount = 4;
-	float total = 5;
-	string paymentMethod = 6;
+	string paketBelajarName = 2;
+	float total = 3;
+	string paymentMethod = 4;
 }
 
 message UpdateOrderRequest {
     string id = 1;
-	optional string idItem = 2;
-	optional string itemName = 3;
-	optional int64 amount = 4;
-	optional float total = 5;
-	optional string paymentMethod = 6;
+	optional string paketBelajarName = 2;
+	optional float total = 3;
+	optional string paymentMethod = 4;
 }
 
 message OrderRequest {

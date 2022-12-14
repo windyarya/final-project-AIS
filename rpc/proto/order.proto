@@ -3,25 +3,21 @@ syntax = "proto3";
 message Order {
     string id = 1;
 	string username = 2;
-	int64 idItem = 3;
-	string itemName = 4;
-	int64 amount = 5;
-	float total = 6;
-	string paymentMethod = 7;
-	string createdAt = 8;
-	string updatedAt = 9;
+	string paketBelajarName = 3;
+	float total = 4;
+	string paymentMethod = 5;
+	string createdAt = 6;
+	string updatedAt = 7;
 }
 
 message OrderResponse { 
 	string id = 1;
 	string username = 2;
-	int64 idItem = 3;
-	string itemName = 4;
-	int64 amount = 5;
-	float total = 6;
-	string paymentMethod = 7;
-	string createdAt = 8;
-	string updatedAt = 9;
+	string paketBelajarName = 3;
+	float total = 4;
+	string paymentMethod = 5;
+	string createdAt = 6;
+	string updatedAt = 7;
 }
 
 message Empty {}
