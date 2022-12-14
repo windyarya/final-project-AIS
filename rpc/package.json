@@ -1,0 +1,28 @@
+{
+  "name": "grpc-project",
+  "version": "1.0.0",
+  "description": "Final Project Arsitektur dan Integrasi Sistem 2022 dengan gRPC",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/windyarya/gRPC-project.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/windyarya/gRPC-project/issues"
+  },
+  "homepage": "https://github.com/windyarya/gRPC-project#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.0",
+    "@grpc/proto-loader": "^0.7.3",
+    "body-parser": "^1.20.1",
+    "express": "^4.18.2",
+    "grpc": "^1.24.11",
+    "hbs": "^4.2.0",
+    "uuid": "^9.0.0"
+  }
+}

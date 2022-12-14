@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+message Order {
+    string id = 1;
+	string username = 2;
+	int64 idItem = 3;
+	string itemName = 4;
+	int64 amount = 5;
+	float total = 6;
+	string paymentMethod = 7;
+	string createdAt = 8;
+	string updatedAt = 9;
+}
+
+message OrderResponse { 
+	string id = 1;
+	string username = 2;
+	int64 idItem = 3;
+	string itemName = 4;
+	int64 amount = 5;
+	float total = 6;
+	string paymentMethod = 7;
+	string createdAt = 8;
+	string updatedAt = 9;
+}
+
+message Empty {}
+
+message OrderResponseList {
+    repeated OrderResponse order = 1;
+}

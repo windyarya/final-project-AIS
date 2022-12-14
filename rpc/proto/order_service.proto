@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+import "order.proto";
+
+service OrderService {
+    rpc Insert (CreateOrderRequest) returns (OrderResponse) {}
+    rpc Get (OrderRequest) returns (OrderResponse) {}
+    rpc GetAll (Empty) returns (OrderResponseList) {}
+    rpc Update (UpdateOrderRequest) returns (OrderResponse) {}
+    rpc Remove (OrderRequest) returns (Empty) {}
+}
+
+message CreateOrderRequest {
+    string username = 1;
+	string idItem = 2;
+	string itemName = 3;
+	int64 amount = 4;
+	float total = 5;
+	string paymentMethod = 6;
+}
+
+message UpdateOrderRequest {
+    string id = 1;
+	optional string idItem = 2;
+	optional string itemName = 3;
+	optional int64 amount = 4;
+	optional float total = 5;
+	optional string paymentMethod = 6;
+}
+
+message OrderRequest {
+    string id = 1;
+}
