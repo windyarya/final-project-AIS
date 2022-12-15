@@ -60,7 +60,7 @@ io.attach(app, {
 var users = {};
 
 io.on("connection", (socket) => {
-  console.log("👾 New socket connected! >>", socket.id);
+  console.log("New socket connected! >>", socket.id);
 
   socket.on("new-connection", (data) => {
 
