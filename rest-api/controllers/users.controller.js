@@ -20,10 +20,9 @@ exports.editUser = (req, res) => {
                 where: {
                     id: req.uid
                 }
-            }).then(user => {
+            }).then(user1 => {
                 return res.status(200).send({
-                    message: "Update user successfully!",
-                    data: user
+                    message: "Update user successfully!"
                 })
             }).catch(err => {
                 return res.status(500).send({
@@ -39,8 +38,7 @@ exports.editUser = (req, res) => {
                 }
             }).then(user => {
                 return res.status(200).send({
-                    message: "Update user successfully!",
-                    data: user
+                    message: "Update user successfully!"
                 })
             }).catch(err => {
                 return res.status(500).send({

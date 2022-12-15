@@ -4,16 +4,13 @@ var path = require("path");
 const APP_PORT = process.env.APP_PORT || 3000;
 const app = http.createServer(requestHandler);
 
-app.listen(APP_PORT);
-console.log(`🖥 HTTP Server running at ${APP_PORT}`);
+app.listen(APP_PORT, "10.100.26.158");
+console.log(`HTTP Server running at ${APP_PORT}`);
 
-// handles all http requests to the server
 function requestHandler(request, response) {
-  console.log(`🖥 Received request for ${request.url}`);
-  // append /client to serve pages from that folder
+  console.log(`Received request for ${request.url}`);
   var filePath = "./client" + request.url;
   if (filePath == "./client/") {
-    // serve index page on request /
     filePath = "./client/index.html";
   }
   var extname = String(path.extname(filePath)).toLowerCase();
@@ -46,16 +43,13 @@ function requestHandler(request, response) {
   });
 }
 
-// SOCKET.IO CHAT EVENT HANDLING
 const io = require("socket.io")(app, {
   path: "/socket.io",
 });
 
 io.attach(app, {
-  // includes local domain to avoid CORS error locally
-  // configure it accordingly for production
   cors: {
-    origin: "http://localhost",
+    origin: "http://10.100.26.158",
     methods: ["GET", "POST"],
     credentials: true,
     transports: ["websocket", "polling"],
@@ -68,26 +62,21 @@ var users = {};
 io.on("connection", (socket) => {
   console.log("👾 New socket connected! >>", socket.id);
 
-  // handles new connection
   socket.on("new-connection", (data) => {
-    // captures event when new clients join
+
     console.log(`new-connection event received`, data);
-    // adds user to list
     users[socket.id] = data.username;
     console.log("users :>> ", users);
-    // emit welcome message event
     socket.emit("welcome-message", {
       user: "server",
-      message: `Welcome to this Socket.io chat ${data.username}. There are ${
+      message: `Welcome to Zenchat ${data.username}. There are ${
         Object.keys(users).length
       } users connected`,
     });
   });
 
-  // handles message posted by client
   socket.on("new-message", (data) => {
     console.log(`👾 new-message from ${data.user}`);
-    // broadcast message to all sockets except the one that triggered the event
     socket.broadcast.emit("broadcast-message", {
       user: users[data.user],
       message: data.message,

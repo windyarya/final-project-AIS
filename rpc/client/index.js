@@ -1,5 +1,5 @@
 const client = require("./client");
-
+const http = require("http")
 const express = require("express");
 const bodyParser = require("body-parser");
 
@@ -76,7 +76,8 @@ app.delete("/remove", (req, res) => {
     });
 });
 
+
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+http.createServer(app).listen(PORT, "10.100.26.158", () => {
     console.log("Server running at port %d", PORT);
 });

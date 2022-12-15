@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "soap": "^1.0.0"
+  },
+  "type": "module",
+  "name": "soap-client",
+  "version": "1.0.0",
+  "main": "client.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node client.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
