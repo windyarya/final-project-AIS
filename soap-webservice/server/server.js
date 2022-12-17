@@ -40,7 +40,8 @@ const serviceObject = {
     CityServiceSoap12Port: {
       City: (args) => {
         console.log(args.name);
-        return `${args.name} will win the World Cup!`;
+        let rr= resultRandom();
+        return `${args.name} ${rr}`;
       },
     },
   },
