@@ -10,16 +10,16 @@ function resultRandom() {
     let r = Math.floor(Math.random() * 10);
     let country;
     switch (r) {
-        case 0: country = "Argentina"; break;
-        case 1: country = "France"; break;
-        case 2: country = "Morocco"; break;
-        case 3: country = "Croatia"; break;
-        case 4: country = "England"; break;
-        case 5: country = "Netherlands"; break;
-        case 6: country = "Portugal"; break;
-        case 7: country = "Spain"; break;
-        case 8: country = "Qatar"; break;
-        case 9: country = "Saudi Arabia"; break;
+        case 0: country = "Indonesia"; break;
+        case 1: country = "Perancis"; break;
+        case 2: country = "Maroko"; break;
+        case 3: country = "Malaysia"; break;
+        case 4: country = "Inggris"; break;
+        case 5: country = "Belanda"; break;
+        case 6: country = "Brazil"; break;
+        case 7: country = "Singapore"; break;
+        case 8: country = "Australia"; break;
+        case 9: country = "Thailand"; break;
     
         default:
             break;
@@ -34,7 +34,7 @@ const serviceObject = {
       City: (args) => {
         console.log(args.name);
         let rr= resultRandom();
-        return `${rr} ${args.name}`;
+        return `${args.name} ${rr}`;
       },
     },
     CityServiceSoap12Port: {

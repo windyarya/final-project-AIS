@@ -3,7 +3,7 @@ import soap from "soap";
 const PORT = 3000;
 const url = `http://localhost:${PORT}/wsdl?wsdl`;
 
-let name = "will win the World Cup!"
+let name = "Masukkan nomor telepon dengan kode negara "
 
 let args = { name: name };
 
